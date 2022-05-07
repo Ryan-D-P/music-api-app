@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import StDenis from "./images/St.Denis.png";
-import Raphael from "./images/Raphael.jpg";
-import Gallery from "./images/Gallery.jpg";
-import Pannini from "./images/Pannini.png";
-import Moonrise from "./images/Moonrise.jpg";
-import Nouveau from "./images/Nouveau.jpg";
+import StDenis from "../images/St.Denis.png";
+import Raphael from "../images/Raphael.jpg";
+import Gallery from "../images/Gallery.jpg";
+import Pannini from "../images/Pannini.png";
+import Moonrise from "../images/Moonrise.jpg";
+import Nouveau from "../images/Nouveau.jpg";
 
 function Epochs() {
     // Epochs of classical music returned by the music API

@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import searchIcon from "../images/search-icon.svg";
 
-const Search = () => {
+const Search = ({ musicApiData, setComposers }) => {
     const [search, setSearch] = useState(``);
+
+    // On search value change filter displayed composers
+    useEffect(() => {
+        setComposers(musicApiData.filter(composer => new RegExp(search, "i").test(composer.complete_name)));
+    }, [search]);
 
     return (
         <div className="Search relative mb-[50px]">

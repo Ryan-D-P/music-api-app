@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
 const useFetch = (epoch) => {
+    // Inital data and current state
     const [musicApiData, setMusicApiData] = useState([]);
+    const [composers, setComposers] = useState([]);
 
     useEffect(() => {
         const getApiData = async () => {
@@ -22,13 +24,15 @@ const useFetch = (epoch) => {
                 data = (await response.json()).composers;
             }
         
+            // Set initial data and current state to data
             setMusicApiData(data);
+            setComposers(data);
         };
 
         getApiData();
     }, []);
     
-    return [musicApiData];
+    return [musicApiData, composers, setComposers];
 };
 
 export default useFetch;

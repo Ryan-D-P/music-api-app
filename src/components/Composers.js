@@ -7,8 +7,8 @@ const Composers = () => {
 
     // Fetch list of composers from epoch
     const base = `https://api.openopus.org/composer/list/epoch`;
-    const enpoint = (epoch === `Romantic`) ? [`${base}/Early ${epoch}.json`, `${base}/${epoch}.json`, `${base}/Late ${epoch}.json`] : [`${base}/${epoch}.json`];
-    const [musicApiData, composers, setComposers] = useFetchComposers(enpoint);
+    const endpoint = (epoch === `Romantic`) ? [`${base}/Early ${epoch}.json`, `${base}/${epoch}.json`, `${base}/Late ${epoch}.json`] : [`${base}/${epoch}.json`];
+    const [musicApiData, composers, setComposers] = useFetchComposers(endpoint);
 
     return (
         <div className="Composers pt-10">
@@ -17,7 +17,7 @@ const Composers = () => {
                 {
                     composers.map(composer => (
                         <Link 
-                            to={ `/` }
+                            to={ `/works/${composer.id}` }
                             className="Composer text-white m-5 flex flex-col items-center"
                             key={ composer.id }
                         >

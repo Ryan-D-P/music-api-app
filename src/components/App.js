@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Epochs from "./Epochs";
 import Composers from "./Composers";
+import Works from "./Works";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={ <Epochs /> } />
           <Route exact path="/epoch/:epoch" element={ <Composers /> } />
+          <Route exact path="/works/:id" element={ <Works /> } />
         </Routes>
       </BrowserRouter>
     </div>

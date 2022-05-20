@@ -8,8 +8,8 @@ const useFetchWorks = (endpoint) => {
 
     useEffect(() => {
         const getApiData = async () => {
-            const response = null;
-            const data = null;
+            const response = await fetch(endpoint);
+            const data = await response.json();
         
             // Set initial data and current state to data
             setMusicApiData(data);
